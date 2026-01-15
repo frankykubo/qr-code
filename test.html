@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Test</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    qr-code {
+      width: 200px;
+      height: 200px;
+      display: block;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>QR Code Component Test</h1>
+
+  <h2>Test 1: Basic QR Code</h2>
+  <qr-code id="qr1" contents="https://example.com"></qr-code>
+
+  <h2>Test 2: Custom Colors</h2>
+  <qr-code
+    id="qr2"
+    contents="Hello World"
+    module-color="#0066cc"
+    position-ring-color="#004499"
+    position-center-color="#002266">
+  </qr-code>
+
+  <script type="module">
+    // Test with the dist-custom-elements build
+    import './dist/components/qr-code.js';
+
+    // Wait for custom element to be defined
+    customElements.whenDefined('qr-code').then(() => {
+      console.log('qr-code element defined!');
+
+      const qr1 = document.getElementById('qr1');
+      const qr2 = document.getElementById('qr2');
+
+      console.log('QR1 element:', qr1);
+      console.log('QR1 shadowRoot:', qr1.shadowRoot);
+      if (qr1.shadowRoot) {
+        console.log('QR1 shadowRoot innerHTML:', qr1.shadowRoot.innerHTML);
+      }
+      console.log('QR1 contents:', qr1.contents);
+      console.log('QR2 element:', qr2);
+    });
+
+    // Also log any errors
+    window.onerror = (msg, url, line) => {
+      console.error('Error:', msg, url, line);
+    };
+  </script>
+</body>
+</html>

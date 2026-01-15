@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Component Test</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    qr-code {
+      width: 200px;
+      height: 200px;
+      display: block;
+      margin: 20px 0;
+      background-color: white;
+    }
+    .test-section {
+      margin-bottom: 30px;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>QR Code Component Test</h1>
+
+  <div class="test-section">
+    <h2>Test 1: Basic QR Code</h2>
+    <qr-code id="qr1" contents="https://example.com"></qr-code>
+  </div>
+
+  <div class="test-section">
+    <h2>Test 2: Custom Colors</h2>
+    <qr-code
+      id="qr2"
+      contents="Hello World"
+      module-color="#0066cc"
+      position-ring-color="#004499"
+      position-center-color="#002266">
+    </qr-code>
+  </div>
+
+  <div id="status"></div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
