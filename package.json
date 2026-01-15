@@ -8,9 +8,9 @@
   "collection": "dist/collection/collection-manifest.json",
   "exports": {
     ".": {
-      "import": "./dist/components/index.js",
+      "import": "./dist/components/qr-code.js",
       "require": "./dist/index.cjs.js",
-      "types": "./dist/components/index.d.ts"
+      "types": "./dist/components/qr-code.d.ts"
     },
     "./dist/qr-code": {
       "import": "./dist/qr-code.js"
