@@ -1,4 +1,4 @@
-import { AddAnimationOptions } from 'just-animate/types/lib/core/types';
+import { AddAnimationOptions } from 'just-animate/lib/lib/core/types';
 import {
   innermostPoint,
   distanceBetween,

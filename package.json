@@ -1,11 +1,21 @@
 {
-  "name": "@bitjson/qr-code",
-  "version": "1.0.2",
+  "name": "@frankykubo/qr-code",
+  "version": "1.0.0",
   "description": "QR Code Web Component",
   "module": "dist/esm/index.js",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs.js",
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
+  "exports": {
+    ".": {
+      "import": "./dist/components/index.js",
+      "require": "./dist/index.cjs.js",
+      "types": "./dist/components/index.d.ts"
+    },
+    "./dist/qr-code": {
+      "import": "./dist/qr-code.js"
+    }
+  },
   "files": [
     "dist/"
   ],
@@ -19,32 +29,22 @@
     "test.watch": "jest --watch"
   },
   "devDependencies": {
-    "@stencil/core": "^0.10.2",
-    "@types/jest": "^21.1.1",
-    "jest": "^21.2.1",
+    "@stencil/core": "^4.12.0",
+    "@types/jest": "^29.5.0",
+    "jest": "^29.7.0",
     "just-animate": "^2.5.0",
     "qrcode-generator": "^1.4.0"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bitjson/qr-code.git"
+    "url": "git+https://github.com/frankykubo/qr-code.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bitjson/qr-code"
+    "url": "https://github.com/frankykubo/qr-code/issues"
   },
-  "homepage": "https://qr.bitjson.com",
-  "jest": {
-    "transform": {
-      "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"
-    },
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "json",
-      "jsx"
-    ]
-  }
+  "homepage": "https://github.com/frankykubo/qr-code"
 }
